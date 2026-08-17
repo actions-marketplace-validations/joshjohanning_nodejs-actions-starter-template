@@ -1,6 +1,7 @@
 # nodejs-actions-starter-template
 
 [![GitHub release](https://img.shields.io/github/release/joshjohanning/nodejs-actions-starter-template.svg?logo=github&labelColor=333)](https://github.com/joshjohanning/nodejs-actions-starter-template/releases)
+[![Immutable releases](https://img.shields.io/badge/releases-immutable-blue?labelColor=333)](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/immutable-releases)
 [![GitHub marketplace](https://img.shields.io/badge/marketplace-NodeJS%20Actions%20Starter%20Template-blue?logo=github&labelColor=333)](https://github.com/marketplace/actions/nodejs-actions-starter-template)
 [![CI](https://github.com/joshjohanning/nodejs-actions-starter-template/actions/workflows/ci.yml/badge.svg)](https://github.com/joshjohanning/nodejs-actions-starter-template/actions/workflows/ci.yml)
 [![Publish GitHub Action](https://github.com/joshjohanning/nodejs-actions-starter-template/actions/workflows/publish.yml/badge.svg)](https://github.com/joshjohanning/nodejs-actions-starter-template/actions/workflows/publish.yml)
@@ -103,13 +104,10 @@ This template includes everything you need to start developing GitHub Actions:
 
 ### Testing Locally
 
-You can test the action locally by setting environment variables:
+You can test the action locally using `env` to set input variables (hyphens are preserved in the env var names):
 
 ```bash
-export INPUT_WHO_TO_GREET="Local Dev"
-export INPUT_INCLUDE_TIME="true"
-export INPUT_MESSAGE_PREFIX="Hey"
-node src/index.js
+env 'INPUT_WHO-TO-GREET=Local Dev' 'INPUT_INCLUDE-TIME=true' 'INPUT_MESSAGE-PREFIX=Hey' node src/index.js
 ```
 
 ### Project Structure
